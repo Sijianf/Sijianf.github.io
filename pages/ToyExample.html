@@ -1,175 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/rice180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/rice32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/rice16.png">
-  <link rel="mask-icon" href="/images/rice16.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="Toy example for fun research  &#x2F;&#x2F; Pandoc 2.9 adds attributes on both header and div. We remove the former (to &#x2F;&#x2F; be compatible with the behavior of Pandoc &lt; 2.8). document.addEventListen">
-<meta property="og:type" content="website">
-<meta property="og:title" content="米饭四溅">
-<meta property="og:url" content="http://example.com/ToyExample.html">
-<meta property="og:site_name" content="米饭四溅">
-<meta property="og:description" content="Toy example for fun research  &#x2F;&#x2F; Pandoc 2.9 adds attributes on both header and div. We remove the former (to &#x2F;&#x2F; be compatible with the behavior of Pandoc &lt; 2.8). document.addEventListen">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-20T02:47:05.518Z">
-<meta property="article:modified_time" content="2024-11-19T22:01:23.888Z">
-<meta property="article:author" content="Mr.Rice">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://example.com/ToyExample">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/ToyExample.html","path":"ToyExample.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | 米饭四溅
-</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">米饭四溅</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Get busy living, or get busy dying.</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Toy example for fun
-research</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">2023-07-04</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#highlights"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Highlights:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1. Introduction:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#about-movielense-data"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">2. About MovieLense data</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#the-sparse-case-movielense50"><span class="nav-number">1.0.0.4.1.</span> <span class="nav-text">2.1 The sparse case: MovieLense50</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-dense-case-movielense100"><span class="nav-number">1.0.0.4.2.</span> <span class="nav-text">2.2 The dense case: MovieLense100</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#about-drimc-data"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">3. About DRIMC data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#extra-reference"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">4. Extra reference</span></a></li></ol></li></ol></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mr.Rice"
-      src="/images/sijianf1.gif">
-  <p class="site-author-name" itemprop="name">Mr.Rice</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner page posts-expand">
-
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta-container">
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <!DOCTYPE html>
 
 <html>
 
@@ -502,29 +331,29 @@ modify it to a more efficient way.</p>
 <span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>sim_matrix_v3 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="fu">nrow</span>(data_v), <span class="at">ncol =</span> <span class="fu">nrow</span>(data_v)) </span>
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a></span>
 <span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co"># define a function to calculate the Jaccard similarity between two vectors</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>jaccard_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) &#123;</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>jaccard_sim <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
 <span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>  intersect <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">intersect</span>(x, y))</span>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>  union <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">c</span>(x, y)))</span>
 <span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span> <span class="sc">-</span> intersect<span class="sc">/</span>union)</span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>&#125;</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>}</span>
 <span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co"># calculate the Jaccard similarity between each pair of rows</span></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_u)) &#123;</span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_u)) &#123;</span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">!=</span> j) &#123;</span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_u)) {</span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_u)) {</span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">!=</span> j) {</span>
 <span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>      sim_matrix_u[i, j] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">jaccard_sim</span>(data_u[i, ], data_u[j, ])</span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>    &#125;</span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>  &#125;</span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>&#125;</span>
-<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_v)) &#123;</span>
-<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_v)) &#123;</span>
-<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">&lt;</span> j) &#123;</span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>    }</span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>  }</span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>}</span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_v)) {</span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_v)) {</span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>    <span class="cf">if</span> (i <span class="sc">&lt;</span> j) {</span>
 <span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>      sim_matrix_v1[i, j] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">stringdist</span>(data_v[i, <span class="st">&quot;title&quot;</span>], data_v[j, <span class="st">&quot;title&quot;</span>], <span class="at">method =</span> <span class="st">&quot;jw&quot;</span>)</span>
 <span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>      sim_matrix_v2[i, j] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">jaccard_sim</span>(data_v[i, <span class="st">&quot;year&quot;</span>], data_v[j, <span class="st">&quot;year&quot;</span>])</span>
 <span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a>      sim_matrix_v3[i, j] <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">vegdist</span>(<span class="fu">rbind</span>(data_v[i, <span class="dv">3</span><span class="sc">:</span><span class="dv">21</span>], data_v[j, <span class="dv">3</span><span class="sc">:</span><span class="dv">21</span>]), <span class="at">method =</span> <span class="st">&quot;jaccard&quot;</span>)</span>
-<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>    &#125;</span>
-<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>  &#125;</span>
-<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a>&#125;</span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>    }</span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>  }</span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a>}</span>
 <span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a></span>
 <span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a>sim_matrix_v1 <span class="ot">=</span> sim_matrix_v1<span class="sc">+</span><span class="fu">t</span>(sim_matrix_v1)</span>
 <span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a>sim_matrix_v2 <span class="ot">=</span> sim_matrix_v2<span class="sc">+</span><span class="fu">t</span>(sim_matrix_v2)</span>
@@ -553,91 +382,6 @@ modify it to a more efficient way.</p>
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
-</body>
-</html>
-
-      </div>
-      
-      
-      
-    </div>
-
-    
-    
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-  <div class="languages">
-    <label class="lang-select-label">
-      <i class="fa fa-language"></i>
-      <span>简体中文</span>
-      <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </label>
-    <select class="lang-select" data-canonical="" aria-label="选择语言">
-      
-        <option value="zh-CN" data-href="/ToyExample.html" selected="">
-          简体中文
-        </option>
-      
-        <option value="en" data-href="/en/ToyExample.html" selected="">
-          English
-        </option>
-      
-    </select>
-  </div>
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Mr.Rice</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>
