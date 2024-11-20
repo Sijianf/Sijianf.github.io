@@ -1,179 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/rice180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/rice32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/rice16.png">
-  <link rel="mask-icon" href="/images/rice16.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="BIOS 545 - 2019 - Lecture 2: Variables, Objects, Vectors              code{white-space: pre;}    pre:not([class]) {     background-color: white;   }   if (window.hljs) {   hljs.configure(">
-<meta property="og:type" content="website">
-<meta property="og:title" content="米饭四溅">
-<meta property="og:url" content="http://example.com/pages/R-notes/Lecture2_Variables_Objects_Vectors.html">
-<meta property="og:site_name" content="米饭四溅">
-<meta property="og:description" content="BIOS 545 - 2019 - Lecture 2: Variables, Objects, Vectors              code{white-space: pre;}    pre:not([class]) {     background-color: white;   }   if (window.hljs) {   hljs.configure(">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-20T01:47:45.684Z">
-<meta property="article:modified_time" content="2019-06-03T05:52:06.000Z">
-<meta property="article:author" content="Mr.Rice">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://example.com/pages/R-notes/Lecture2_Variables_Objects_Vectors">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/pages/R-notes/Lecture2_Variables_Objects_Vectors.html","path":"pages/R-notes/Lecture2_Variables_Objects_Vectors.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | 米饭四溅
-</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">米饭四溅</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Get busy living, or get busy dying.</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#header"><span class="nav-number">1.</span> <span class="nav-text">BIOS 545 - 2019 - Lecture 2: Variables, Objects, Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#topics-today"><span class="nav-number">1.1.</span> <span class="nav-text">Topics today</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#variables"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dates"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. Dates</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logical"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. Logical</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interrogationcoercion"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. Interrogation&#x2F;Coercion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vectors"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. Vectors</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#variables-1"><span class="nav-number">1.2.</span> <span class="nav-text">1. Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-str-function-does-a-really-good-job-of-telling-you-what-the-type-and-structure-of-an-object-is.-use-it-frequently-i-do."><span class="nav-number">1.2.0.1.</span> <span class="nav-text">The str function does a really good job of telling you what the type and structure of an object is. Use it frequently ! (I do).</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#there-are-four-primary-variable-classes"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">There are four primary variable classes:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#first-we-will-take-a-look-at-numeric-data-types"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">First we will take a look at numeric data types:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#there-is-a-difference-between-real-and-integer-values."><span class="nav-number">1.2.0.4.</span> <span class="nav-text">There is a difference between real and integer values.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#character-strings-usually-represent-qualitative-variables.-many-r-functions-will-usually-convert-character-variables-into-factors-if-necessary-but-not-always.-we-will-discuss-factors-soon-enough"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">Character strings usually represent qualitative variables. Many R functions will usually convert character variables into factors if necessary but not always. (We will discuss factors soon enough)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dates-1"><span class="nav-number">1.3.</span> <span class="nav-text">2. Dates</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#r-has-a-builtin-function-called-sys.date-that-can-tell-you-the-date.-it-looks-like-it-returns-just-a-character-string-but-it-returns-a-true-date-object.-use-str-when-in-doubt.-but-sys.date-doesnt-help-us-convert-strings-to-dates."><span class="nav-number">1.3.0.1.</span> <span class="nav-text">R has a builtin function called Sys.Date() that can tell you the date. It looks like it returns just a character string but it returns a true date object. (Use str when in doubt). But Sys.Date() doesn’t help us convert strings to dates.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#so-unless-you-tell-r-that-a-string-is-in-fact-a-real-date-it-will-assume-that-it-is-simply-a-character-string."><span class="nav-number">1.3.0.2.</span> <span class="nav-text">So unless you tell R that a string is in fact a &#96;&#96;real’’ date it will assume that it is simply a character string.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-as.date-function-handles-dates-involving-years-months-and-days.-it-does-not-handle-times.-it-is-easy-to-use-once-you-learn-the-tokens."><span class="nav-number">1.3.0.3.</span> <span class="nav-text">The as.Date() function handles dates involving years, months, and days. It does not handle times. It is easy to use once you learn the tokens.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#once-dates-have-been-converted-we-can-perform-arithmetic-and-logical-operations-on-them."><span class="nav-number">1.3.0.4.</span> <span class="nav-text">Once dates have been converted we can perform arithmetic and logical operations on them.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-function-can-help-us-convert-columns-in-a-data-frame-that-contain-dates-as-character-strings"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">This function can help us convert columns in a data frame that contain dates as character strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#there-are-some-helper-functions-that-make-it-easy-to-figure-out-the-month-name-of-a-series-of-dates-or-whether-a-given-date-represents-a-weekday."><span class="nav-number">1.3.0.6.</span> <span class="nav-text">There are some helper functions that make it easy to figure out the month name of a series of dates or whether a given date represents a weekday.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lets-revisit-this-example-to-show-why-any-of-this-matters"><span class="nav-number">1.3.0.7.</span> <span class="nav-text">Let’s revisit this example to show why any of this matters:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#another-useful-tool-to-process-dates-function-strptime"><span class="nav-number">1.3.1.</span> <span class="nav-text">Another useful tool to process dates: function strptime():</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#since-strptime-handles-times-as-well-as-dates-you-will-need-to-know-the-tokens-necessary-to-process-times.-the-tokens-to-process-dates-are-the-same-as-with-as.date."><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Since strptime handles times as well as dates you will need to know the tokens necessary to process times. The tokens to process dates are the same as with as.Date().</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#we-can-also-easily-generate-sequences-of-dates-if-necessary."><span class="nav-number">1.3.1.2.</span> <span class="nav-text">We can also easily generate sequences of dates if necessary.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#once-we-have-a-date-we-can-access-parts-of-it"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Once we have a date we can access &#96;&#96;parts&quot; of it</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#once-we-have-a-date-we-can-re-format-it-to-suit-our-needs-without-changing-the-underlying-date-structure."><span class="nav-number">1.3.1.4.</span> <span class="nav-text">Once we have a date we can re format it to suit our needs without changing the underlying date structure.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logical-1"><span class="nav-number">1.4.</span> <span class="nav-text">3. Logical</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#logical-variables-are-those-that-take-on-a-true-or-false-value.-either-by-direct-assignment-or-as-the-result-of-some-comparison"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">Logical variables are those that take on a TRUE or FALSE value. Either by direct assignment or as the result of some comparison:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#logicals-are-extremely-important-especially-when-using-if-statements-as-part-of-writing-functions."><span class="nav-number">1.4.0.2.</span> <span class="nav-text">Logicals are extremely important especially when using if-statements as part of writing functions.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#logicals-are-extremely-important-especially-when-using-if-statements-as-part-of-writing-functions.-1"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">Logicals are extremely important especially when using if-statements as part of writing functions.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#we-use-logical-operators-to-link-smaller-comparisons.-for-example-the-character-is-the-logical-and-operator."><span class="nav-number">1.4.0.4.</span> <span class="nav-text">We use logical operators to link smaller comparisons. For example, the &amp; character is the logical AND operator.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#in-the-following-statement-both-expressions-on-either-side-of-the-and-operator-need-to-be-true-for-my.var-to-be-true."><span class="nav-number">1.4.0.5.</span> <span class="nav-text">In the following statement both expressions on either side of the AND operator need to be TRUE for my.var to be TRUE.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-logical-or-operator-is-the-character.-only-one-of-the-expressions-on-either-side-of-the-or-operator-needs-to-be-true-for-my.var-to-be-true"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">The logical OR operator is the | character. Only one of the expressions on either side of the OR operator needs to be TRUE for my.var to be TRUE</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interrogationcoercion-1"><span class="nav-number">1.5.</span> <span class="nav-text">4. INTERROGATION&#x2F;COERCION</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#it-is-common-to-interrogate-variables-from-within-some-programming-logic-to-see-what-they-are-or-are-not.-it-is-also-common-to-coerce-variables-into-another-form.-there-are-functions-for-both-activities."><span class="nav-number">1.5.0.1.</span> <span class="nav-text">It is common to interrogate variables from within some programming logic to see what they are (or are not). It is also common to “coerce’’ variables into another form. There are functions for both activities.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#here-are-some-examples-of-interrogation"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">Here are some examples of interrogation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#here-are-some-examples-of-coercion.-we-coerce-variables-usually-after-we-read-in-some-data-but-we-also-do-it-when-writing-functions-to-process-data-frames."><span class="nav-number">1.5.0.3.</span> <span class="nav-text">Here are some examples of coercion. We coerce variables usually after we read in some data but we also do it when writing functions to process data frames.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#here-we-use-both-interrogation-and-coercion-to-check-arguments-to-a-function-that-computes-the-mean-of-a-vector."><span class="nav-number">1.5.0.4.</span> <span class="nav-text">Here we use both interrogation and coercion to check arguments to a function that computes the mean of a vector.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vectors-1"><span class="nav-number">1.6.</span> <span class="nav-text">5. Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vectors-are-a-fundamental-data-structure-in-r.-it-is-absolutely-essential-that-you-know-how-to-be-productive-using-vectors.-vectors-can-have-the-types-described-previously-integer-logicalreal-character-factor."><span class="nav-number">1.6.0.1.</span> <span class="nav-text">Vectors are a fundamental data structure in R. It is absolutely essential that you know how to be productive using vectors. Vectors can have the types described previously, (integer, logical,real, character, factor).</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-we-have-a-vector-we-can-apply-logical-tests.-this-is-very-powerful"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">If we have a vector we can apply logical tests. This is very powerful</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#there-are-operators-we-can-use-to-combine-logical-comparisons"><span class="nav-number">1.6.0.3.</span> <span class="nav-text">There are operators we can use to combine logical comparisons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vectors-exist-in-part-to-help-us-avoid-having-t-o-write-for-loops-everytime-we-want-to-process-a-vector-and-summarize-it.-compare-the-following"><span class="nav-number">1.6.0.4.</span> <span class="nav-text">Vectors exist, in part, to help us avoid having t o write &#96;&#96;for loops’’ everytime we want to process a vector and summarize it. Compare the following:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example-weight-and-height"><span class="nav-number">1.6.1.</span> <span class="nav-text">Example: Weight and height</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lets-create-a-weight-vector-that-corresponds-to-the-height-vector.-we-measured-the-same-people"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">Let’s create a weight vector that corresponds to the height vector. (We measured the same people)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#an-important-attribute-of-a-vector-is-its-length.-to-determine-its-length-or-set-it-one-uses-the-length-function."><span class="nav-number">1.6.1.2.</span> <span class="nav-text">An important attribute of a vector is its length. To determine its length, (or set it), one uses the “length” function.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#you-can-name-the-elements-of-a-vector.-in-this-example-lets-say-we-have-measured-some-heights-of"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">You can name the elements of a vector. In this example, let’s say we have measured some heights of</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-which-command-allows-us-to-determine-which-element-numbers-satisfies-a-condition.-if-the-element-has-a-name-then-we-will-also-see-that-listed."><span class="nav-number">1.6.1.4.</span> <span class="nav-text">The which command allows us to determine which element number(s) satisfies a condition. If the element has a name then we will also see that listed.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-paste-function-allows-us-to-rapidly-generate-label-names-for-a-vector.-for-example-we-can-rapdily-generate-names-for-observations-according-to-a-pattern."><span class="nav-number">1.6.1.5.</span> <span class="nav-text">The paste() function allows us to rapidly generate label names for a vector. For example we can rapdily generate names for observations according to a pattern.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#missing-values"><span class="nav-number">1.6.1.6.</span> <span class="nav-text">Missing Values</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#here-are-some-of-the-functions-in-r-that-operate-on-vectors.-there-are-many-many-more"><span class="nav-number">1.6.1.7.</span> <span class="nav-text">Here are some of the functions in R that operate on vectors. There are many many more:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#various-exmamples"><span class="nav-number">1.6.1.8.</span> <span class="nav-text">Various exmamples</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#we-want-to-find-the-sum-of-all-the-elements-in-x-that-are-less-than-5."><span class="nav-number">1.6.1.9.</span> <span class="nav-text">We want to find the sum of all the elements in x that are less than 5.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#given-the-following-vector-compute-the-sum-of-the-3-largest-elements.-this-is-easy-by-visual-inspection-but-what-if-the-vector-had-100000-or-even-1000000-elements"><span class="nav-number">1.6.1.10.</span> <span class="nav-text">Given the following vector compute the sum of the 3 largest elements. This is easy by visual inspection but what if the vector had 100,000 or even 1,000,000 elements ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#revisit-character-vectors"><span class="nav-number">1.6.2.</span> <span class="nav-text">Revisit: Character Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lets-reconsider-character-vectors"><span class="nav-number">1.6.2.0.1.</span> <span class="nav-text">Let’s reconsider character vectors</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r-has-support-for-string-searching-and-matching."><span class="nav-number">1.6.2.1.</span> <span class="nav-text">R has support for string searching and matching.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#r-has-support-for-string-searching-and-matching.-1"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">R has support for string searching and matching.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find-all-identifiers-that-come-from-arkansas-ak"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">Find all identifiers that come from Arkansas “AK”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#character-vectors-also-show-up-when-we-use-the-list.files-function-to-generate-a-list-of-files-to-be-processed."><span class="nav-number">1.6.2.4.</span> <span class="nav-text">Character vectors also show up when we use the list.files() function to generate a list of files to be processed.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for-example-lets-say-we-have-some-files-of-the-form-001.csv-002.csv-..-029.csv.-maybe-we-want-to-process-some-or-all-of-them.-first-we-have-to-generate-a-character-vector-containing-the-names."><span class="nav-number">1.6.2.5.</span> <span class="nav-text">For example let’s say we have some files of the form 001.csv, 002.csv, .. 029.csv. Maybe we want to process some or all of them. First we have to generate a character vector containing the names.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manipulate-dna-strings"><span class="nav-number">1.6.3.</span> <span class="nav-text">Manipulate DNA Strings</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dna-is-a-series-of-recurring-letters.-we-can-find-patterns-and-motifs-in-stretches-of-dna-strings."><span class="nav-number">1.6.3.1.</span> <span class="nav-text">DNA is a series of recurring letters. We can find patterns and “motifs” in stretches of DNA strings.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lets-look-at-some-special-cases-that-are-important-to-know"><span class="nav-number">1.6.3.2.</span> <span class="nav-text">Let’s look at some special cases that are important to know</span></a></li></ol></li></ol></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mr.Rice"
-      src="/images/sijianf1.gif">
-  <p class="site-author-name" itemprop="name">Mr.Rice</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner page posts-expand">
-
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta-container">
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE2_VARIABLES_OBJECTS_VECTORS</li>
-  </ul>
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -736,35 +561,35 @@ some.variable </code></pre>
 </div>
 <div id="logicals-are-extremely-important-especially-when-using-if-statements-as-part-of-writing-functions." class="section level4">
 <h4>Logicals are extremely important especially when using if-statements as part of writing functions.</h4>
-<pre class="r"><code>if (some_logical_condition) &#123;
+<pre class="r"><code>if (some_logical_condition) {
   do something
-&#125; else &#123;
+} else {
   do something else
-&#125;
+}
 
 
-if (4 &lt; 5) &#123;
+if (4 &lt; 5) {
   print(&quot;Four is less than Five&quot;)
-&#125;</code></pre>
+}</code></pre>
 </div>
 <div id="logicals-are-extremely-important-especially-when-using-if-statements-as-part-of-writing-functions.-1" class="section level4">
 <h4>Logicals are extremely important especially when using if-statements as part of writing functions.</h4>
 <pre class="r"><code>my.var &lt;- ( 4 &lt; 5)
 
-if (my.var) &#123;
+if (my.var) {
   print(&quot;four is less than five&quot;)
-&#125; else &#123;
+} else {
      print(&quot;four is greater than five&quot;)
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## [1] &quot;four is less than five&quot;</code></pre>
 <pre class="r"><code>input=&quot;apple&quot;
-if (input == &quot;pear&quot;) &#123;
+if (input == &quot;pear&quot;) {
   print(&quot;It is a pear!&quot;)
-&#125; else if (input == &quot;banana&quot;) &#123;
+} else if (input == &quot;banana&quot;) {
      print(&quot;It is a banana!&quot;)
-&#125; else if (input == &quot;apple&quot;)&#123;
+} else if (input == &quot;apple&quot;){
      print(&quot;It is an apple!&quot;)
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## [1] &quot;It is an apple!&quot;</code></pre>
 </div>
 <div id="we-use-logical-operators-to-link-smaller-comparisons.-for-example-the-character-is-the-logical-and-operator." class="section level4">
@@ -817,19 +642,19 @@ as.integer(pi)</code></pre>
 </div>
 <div id="here-we-use-both-interrogation-and-coercion-to-check-arguments-to-a-function-that-computes-the-mean-of-a-vector." class="section level4">
 <h4>Here we use both interrogation and coercion to check arguments to a function that computes the mean of a vector.</h4>
-<pre class="r"><code>mymean &lt;- function(x) &#123;
+<pre class="r"><code>mymean &lt;- function(x) {
   #
   # Function to compute the mean of a numeric vector
   #
-  if (!is.vector(x)) &#123;
+  if (!is.vector(x)) {
     stop(&quot;The argument is not a vector&quot;)
-  &#125;
-  if (!is.numeric(x)) &#123;
+  }
+  if (!is.numeric(x)) {
     print(&quot;The arguement is not numeric - Trying to convert to numeric&quot;)
     x &lt;- as.numeric(x)
-  &#125;   
+  }   
   return(sum(x)/length(x))
-&#125;
+}
 
 mymean(c(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;))</code></pre>
 <pre><code>## [1] &quot;The arguement is not numeric - Trying to convert to numeric&quot;</code></pre>
@@ -898,11 +723,11 @@ height[height &gt; 60 &amp; height &lt; 70]</code></pre>
 <h4>Vectors exist, in part, to help us avoid having t o write ``for loops’’ everytime we want to process a vector and summarize it. Compare the following:</h4>
 <pre class="r"><code>height[height &gt; 60 &amp; height &lt; 70]</code></pre>
 <pre><code>## [1] 66 62 66</code></pre>
-<pre class="r"><code>for (ii in 1:length(height)) &#123;
-  if (height[ii] &gt; 60 &amp; height[ii] &lt; 70) &#123;
+<pre class="r"><code>for (ii in 1:length(height)) {
+  if (height[ii] &gt; 60 &amp; height[ii] &lt; 70) {
      print(height[ii])
-   &#125;
-&#125;</code></pre>
+   }
+}</code></pre>
 <pre><code>## [1] 66
 ## [1] 62
 ## [1] 66</code></pre>
@@ -1223,13 +1048,13 @@ my.str</code></pre>
 <pre><code>## [1] &quot;ATTTTTTTGGATGACTGAAC&quot;</code></pre>
 <pre class="r"><code>nchar(my.str)</code></pre>
 <pre><code>## [1] 20</code></pre>
-<pre class="r"><code>for (ii in 1:nchar(my.str)) &#123;
+<pre class="r"><code>for (ii in 1:nchar(my.str)) {
   cat(substr(my.str,ii,ii))
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## ATTTTTTTGGATGACTGAAC</code></pre>
-<pre class="r"><code>for (ii in nchar(my.str):1) &#123;
+<pre class="r"><code>for (ii in nchar(my.str):1) {
   cat(substr(my.str,ii,ii))
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## CAAGTCAGTAGGTTTTTTTA</code></pre>
 <pre class="r"><code># Recipe to get the &quot;collapsed&quot; string back into a vector with 
 # separate elements for each letter
@@ -1267,96 +1092,6 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
-</body>
-</html>
-
-      </div>
-      
-      
-      
-    </div>
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE2_VARIABLES_OBJECTS_VECTORS</li>
-  </ul>
-
-    
-    
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-  <div class="languages">
-    <label class="lang-select-label">
-      <i class="fa fa-language"></i>
-      <span>简体中文</span>
-      <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </label>
-    <select class="lang-select" data-canonical="" aria-label="选择语言">
-      
-        <option value="zh-CN" data-href="/pages/R-notes/Lecture2_Variables_Objects_Vectors.html" selected="">
-          简体中文
-        </option>
-      
-        <option value="en" data-href="/en/pages/R-notes/Lecture2_Variables_Objects_Vectors.html" selected="">
-          English
-        </option>
-      
-    </select>
-  </div>
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Mr.Rice</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>

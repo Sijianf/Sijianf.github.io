@@ -1,179 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/rice180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/rice32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/rice16.png">
-  <link rel="mask-icon" href="/images/rice16.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="BIOS 545 - 2019 - Lecture 4: Lists and Data Frames            code{white-space: pre;}    pre:not([class]) {     background-color: white;   }   if (window.hljs) {   hljs.configure({languag">
-<meta property="og:type" content="website">
-<meta property="og:title" content="米饭四溅">
-<meta property="og:url" content="http://example.com/pages/R-notes/Lecture4_Lists_DataFrames.html">
-<meta property="og:site_name" content="米饭四溅">
-<meta property="og:description" content="BIOS 545 - 2019 - Lecture 4: Lists and Data Frames            code{white-space: pre;}    pre:not([class]) {     background-color: white;   }   if (window.hljs) {   hljs.configure({languag">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-20T01:48:13.595Z">
-<meta property="article:modified_time" content="2019-06-03T05:52:06.000Z">
-<meta property="article:author" content="Mr.Rice">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://example.com/pages/R-notes/Lecture4_Lists_DataFrames">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/pages/R-notes/Lecture4_Lists_DataFrames.html","path":"pages/R-notes/Lecture4_Lists_DataFrames.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | 米饭四溅
-</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">米饭四溅</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Get busy living, or get busy dying.</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#header"><span class="nav-number">1.</span> <span class="nav-text">BIOS 545 - 2019 - Lecture 4: Lists and Data Frames</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lists"><span class="nav-number">1.1.</span> <span class="nav-text">1. Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#name-a-list"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 Name a list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-possible-always-create-named-elements.-it-is-easier-for-humans-to-index-into-a-named-list"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">If possible, always create named elements. It is easier for humans to index into a named list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-the-list-elements-have-no-names-then-you-have-to-use-numeric-indexing"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">If the list elements have no names then you have to use numeric indexing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unlist"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 unlist()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#use-the-unlist-function-to-turn-a-list-into-a-vector.-since-the-list-usually-has-mixed-data-types-then-the-elements-will-be-converted-to-a-single-type."><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Use the unlist function to turn a list into a vector. Since the list usually has mixed data types then the elements will be converted to a single type.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#when-we-use-lists"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 When we use lists?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#as-newcomers-to-r-we-usually-doesnt-create-lists-except-in-two-major-cases"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">As newcomers to R we usually doesn’t create lists except in two major cases:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#as-an-example-of-the-first-case-r-has-lots-of-statistical-functions-that-return-lists-of-information."><span class="nav-number">1.1.3.2.</span> <span class="nav-text">As an example of the first case, R has lots of statistical functions that return lists of information.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#some-other-basic-r-functions-will-return-a-list---such-as-some-of-the-character-functions"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">Some other basic R functions will return a list - such as some of the character functions:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lists---sapplylapply"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 Lists - sapply&#x2F;lapply</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#remember-the-sapply-command-we-use-it-to-apply-a-function-over-each-element-of-a-list-or-a-vector.-this-helps-us-avoid-having-to-write-a-for-loop-every-time-we-want-to-process-a-list-or-a-vector."><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Remember the sapply command ? We use it to apply a function over each element of a list or a vector. This helps us avoid having to write a “for-loop” every time we want to process a list or a vector.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sapply-tries-to-return-a-simplified-version-of-the-output-either-a-vector-or-matrix-hence-the-s-in-the-sapply.-if-you-dont-use-something-like-sapply-then-the-example-on-the-previous-slide-would-look-this"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">sapply tries to return a “simplified” version of the output (either a vector or matrix) hence the “s” in the “sapply”. If you don’t use something like sapply then the example on the previous slide would look this:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#what-is-lapply"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">What is lapply?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-frames"><span class="nav-number">1.2.</span> <span class="nav-text">2. Data Frames</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#an-example-of-data-frame"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 An example of data frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#here-we-have-2-character-vectors-and-2-numeric-vectors.-lets-say-we-want-to-do-some-summary-on-them"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Here we have 2 character vectors and 2 numeric vectors. Let’s say we want to do some summary on them:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-data-frame"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 Create a data frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#that-doesnt-generalize-at-all.-use-the-dataframe-function-to-create-a-data-frame.-it-looks-like-a-matrix-but-allows-for-mixed-data-types"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">That doesn’t generalize at all. Use the dataframe() function to create a data frame. It looks like a matrix but allows for mixed data types</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useful-datasets-in-the-format-of-data-frame"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 Useful datasets in the format of data frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#r-comes-with-a-variety-of-built-in-data-sets-that-are-very-useful-for-getting-used-to-data-sets-and-how-to-manipulate-them."><span class="nav-number">1.2.3.1.</span> <span class="nav-text">R comes with a variety of built-in data sets that are very useful for getting used to data sets and how to manipulate them.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-remove-exclude-in-data-frame"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 Select, remove, exclude in data frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#there-are-various-ways-to-select-remove-or-exclude-rows-and-columns"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">There are various ways to select, remove, or exclude rows and columns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find-all-rows-that-correspond-to-automatic-and-count-them"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Find all rows that correspond to Automatic and Count them</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#extract-all-rows-whose-mpg-value-exceeds-the-mean-mpg-for-the-entire-data-frame"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">Extract all rows whose MPG value exceeds the mean MPG for the entire data frame</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#what-columns-appear-to-be-factors-variables-with-only-a-few-different-unique-values-perhaps"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">What columns appear to be factors ? Variables with only a “few” different unique values perhaps ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-one-column-of-the-data-frame-is-a-categorical-variable"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">If one column of the data frame is a categorical variable</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-columns-to-data-frame"><span class="nav-number">1.2.5.</span> <span class="nav-text">2.5 Add columns to data frame</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#we-can-add-columns-to-a-data-frame.-lets-say-we-want-to-create-a-new-column-called-mpgrate-that-based-on-the-output-of-the-quantile-command-will-have-a-rating-of-the-that-cars-mpg-in-terms-of-horriblebadgoodgreat"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">We can add columns to a data frame. Let’s say we want to create a new column called “mpgrate” that, based on the output of the quantile command, will have a rating of the that car’s MPG in terms of “horrible”,“bad”,“good”,“great”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#you-can-also-use-the-transform-command-to-change-the-typesclasses-of-the-columns"><span class="nav-number">1.2.5.2.</span> <span class="nav-text">You can also use the transform() command to change the types&#x2F;classes of the columns</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#missing-data"><span class="nav-number">1.2.6.</span> <span class="nav-text">2.6 Missing data</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-na-datum-not-available-is-rs-way-of-dealing-with-missing-data.-nas-can-give-you-trouble-unless-you-explicitly-tell-functions-to-ignore-them.-you-can-also-pass-the-data-through-na.omit-na.exclude-or-complete.cases-to-insure-that-r-handles-data-accordingly."><span class="nav-number">1.2.6.1.</span> <span class="nav-text">The NA (datum Not Available) is R’s way of dealing with missing data. NAs can give you trouble unless you explicitly tell functions to ignore them. You can also pass the data through na.omit(), na.exclude(), or complete.cases() to insure that R handles data accordingly.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#calculations-by-removing-na-values"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">calculations by removing na values:</span></a></li></ol></li></ol></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mr.Rice"
-      src="/images/sijianf1.gif">
-  <p class="site-author-name" itemprop="name">Mr.Rice</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner page posts-expand">
-
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta-container">
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE4_LISTS_DATAFRAMES</li>
-  </ul>
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -541,13 +366,13 @@ mys &lt;- strsplit(mystring, &quot; &quot;)
 str(mys)</code></pre>
 <pre><code>## List of 1
 ##  $ : chr [1:4] &quot;This&quot; &quot;is&quot; &quot;a&quot; &quot;test&quot;</code></pre>
-<pre class="r"><code>my.summary &lt;- function(x) &#123;
+<pre class="r"><code>my.summary &lt;- function(x) {
  return.list &lt;- list()      
  return.list$mean &lt;- mean(x)
  return.list$sd &lt;- sd(x)
  return.list$var &lt;- var(x)
  return(return.list)   
-&#125;
+}
 
 my.summary(1:10)</code></pre>
 <pre><code>## $mean
@@ -583,9 +408,9 @@ sapply(family1,class)</code></pre>
 family1 &lt;- list(husband=&quot;Fred&quot;, wife=&quot;Wilma&quot;, numofchildren=3, 
                 agesofkids=c(8,11,14))
 
-for (ii in 1:length(family1)) &#123;
+for (ii in 1:length(family1)) {
   cat(names(family1)[ii],&quot; : &quot;,class(family1[[ii]]),&quot;\n&quot;)
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## husband  :  character 
 ## wife  :  character 
 ## numofchildren  :  numeric 
@@ -637,11 +462,11 @@ lapply(family1,class)</code></pre>
 ## 
 ## $agesofkids
 ## [1] 11</code></pre>
-<pre class="r"><code>my.func &lt;- function(x)&#123;
-     if(class(x)==&quot;numeric&quot;) &#123;
+<pre class="r"><code>my.func &lt;- function(x){
+     if(class(x)==&quot;numeric&quot;) {
           return(mean(x))
-     &#125;
-&#125;
+     }
+}
 
 lapply(family1, my.func)</code></pre>
 <pre><code>## $husband
@@ -677,10 +502,10 @@ pulse &lt;- c(66,72,83,85,90)
 gender &lt;- c(&quot;M&quot;,&quot;F&quot;,&quot;M&quot;,&quot;M&quot;,&quot;F&quot;)
 
 # We could write a for loop to get information for each patient
-for (ii in 1:length(gender)) &#123;
+for (ii in 1:length(gender)) {
 print.string = c(names[ii],temp[ii],pulse[ii],gender[ii])
 print(print.string)
-&#125;</code></pre>
+}</code></pre>
 <pre><code>## [1] &quot;P1&quot;   &quot;98.2&quot; &quot;66&quot;   &quot;M&quot;   
 ## [1] &quot;P2&quot;    &quot;101.3&quot; &quot;72&quot;    &quot;F&quot;    
 ## [1] &quot;P3&quot;   &quot;97.2&quot; &quot;83&quot;   &quot;M&quot;   
@@ -1134,96 +959,6 @@ $(document).ready(function () {
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
-
-</body>
-</html>
-
-      </div>
-      
-      
-      
-    </div>
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE4_LISTS_DATAFRAMES</li>
-  </ul>
-
-    
-    
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-  <div class="languages">
-    <label class="lang-select-label">
-      <i class="fa fa-language"></i>
-      <span>简体中文</span>
-      <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </label>
-    <select class="lang-select" data-canonical="" aria-label="选择语言">
-      
-        <option value="zh-CN" data-href="/pages/R-notes/Lecture4_Lists_DataFrames.html" selected="">
-          简体中文
-        </option>
-      
-        <option value="en" data-href="/en/pages/R-notes/Lecture4_Lists_DataFrames.html" selected="">
-          English
-        </option>
-      
-    </select>
-  </div>
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Mr.Rice</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>

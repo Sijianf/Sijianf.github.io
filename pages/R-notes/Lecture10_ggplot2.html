@@ -1,179 +1,4 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/rice180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/rice32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/rice16.png">
-  <link rel="mask-icon" href="/images/rice16.png" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-
-    <meta name="description" content="Intro to R - Plots Part II                                    var SLIDE_CONFIG &#x3D; {       &#x2F;&#x2F; Slide settings       settings: {                 title: &#39;Intro to R - Plots Part II&#39;,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="米饭四溅">
-<meta property="og:url" content="http://example.com/pages/R-notes/Lecture10_ggplot2.html">
-<meta property="og:site_name" content="米饭四溅">
-<meta property="og:description" content="Intro to R - Plots Part II                                    var SLIDE_CONFIG &#x3D; {       &#x2F;&#x2F; Slide settings       settings: {                 title: &#39;Intro to R - Plots Part II&#39;,">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-20T01:51:16.255Z">
-<meta property="article:modified_time" content="2019-06-03T05:52:08.000Z">
-<meta property="article:author" content="Mr.Rice">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://example.com/pages/R-notes/Lecture10_ggplot2">
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://example.com/pages/R-notes/Lecture10_ggplot2.html","path":"pages/R-notes/Lecture10_ggplot2.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | 米饭四溅
-</title>
-  
-
-
-
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <div class="column">
-      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">米饭四溅</p>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">Get busy living, or get busy dying.</p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-    </div>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-  </ul>
-</nav>
-
-
-
-
-</header>
-        
-  
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">Recall - 4 Major Graphics Packages in R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">What makes a good plot?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">Lattice Graphics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">Lattice Graphics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">Lattice Graphics - Grouping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">Lattice Graphics - Panels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text">Panels in Base R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.9.</span> <span class="nav-text">Panels in Base R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.10.</span> <span class="nav-text">ggplot2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.11.</span> <span class="nav-text">ggplot2 resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.12.</span> <span class="nav-text">ggplot2 resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.13.</span> <span class="nav-text">tidyverse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.14.</span> <span class="nav-text">ggplot2 examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.15.</span> <span class="nav-text">ggplot2 examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.16.</span> <span class="nav-text">ggplot2 examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.17.</span> <span class="nav-text">ggplot2 - Key Ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.18.</span> <span class="nav-text">ggplot2 - Key Ideas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.19.</span> <span class="nav-text">Aesthetics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.20.</span> <span class="nav-text">Examples using mtcars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.21.</span> <span class="nav-text">Examples using mtcars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.22.</span> <span class="nav-text">Plotting is all about exploring relationships!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.23.</span> <span class="nav-text">1. What does the distribution of wt values look like?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.24.</span> <span class="nav-text">1. What does the distribution of wt values look like?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.25.</span> <span class="nav-text">1. What does the distribution of wt values look like?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.26.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.27.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.28.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.29.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.30.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.31.</span> <span class="nav-text">2. Is there a relationship between mpg and wt?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.32.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.33.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.34.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.35.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.36.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.37.</span> <span class="nav-text">3. Does mpg appear to be different over individual cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.38.</span> <span class="nav-text">Note the difference between mappings and settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.39.</span> <span class="nav-text">Note the difference between mappings and settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.40.</span> <span class="nav-text">4. What are the counts of transmission types and cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.41.</span> <span class="nav-text">Counts and Tabular Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.42.</span> <span class="nav-text">Counts and Tabular Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.43.</span> <span class="nav-text">Counts and Tabular Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.44.</span> <span class="nav-text">4. What are the counts of transmission types and cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.45.</span> <span class="nav-text">4. What are the counts of transmission types and cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.46.</span> <span class="nav-text">4. What are the counts of transmission types and cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.47.</span> <span class="nav-text">4. What are the counts of transmission types and cylinder groups?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.48.</span> <span class="nav-text">A few more fun things</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.49.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.50.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.51.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.52.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.53.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.54.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.55.</span> <span class="nav-text">Facets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.56.</span> <span class="nav-text">Density</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.57.</span> <span class="nav-text">Density</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.58.</span> <span class="nav-text">Boxplot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.59.</span> <span class="nav-text">Summary of ggplot geometry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.60.</span> <span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.61.</span> <span class="nav-text">Happy Plotting!</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mr.Rice"
-      src="/images/sijianf1.gif">
-  <p class="site-author-name" itemprop="name">Mr.Rice</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
-      </div>
-  </nav>
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    
-  </aside>
-
-
-    </div>
-
-    <div class="main-inner page posts-expand">
-
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">
-</h1>
-
-<div class="post-meta-container">
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE10_GGPLOT2</li>
-  </ul>
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <!DOCTYPE html>
 <html>
 <head>
   <title>Intro to R - Plots Part II</title>
@@ -297,7 +122,7 @@
 <li>Takes care of lots of things for you</li>
 <li>Has a formula interface</li>
 <li>Lots of examples and support on Google</li>
-<li>See <a target="_blank" rel="noopener" href='http://lmdvr.r-forge.r-project.org/figures/figures.html/' title=''>http://lmdvr.r-forge.r-project.org/figures/figures.html/</a></li>
+<li>See <a href='http://lmdvr.r-forge.r-project.org/figures/figures.html/' title=''>http://lmdvr.r-forge.r-project.org/figures/figures.html/</a></li>
 <li>Picks useful defaults for you</li>
 </ul>
 
@@ -370,20 +195,20 @@ for (ii in 1:length(mydf)) {
 </article></slide><slide class=""><hgroup><h2>ggplot2 resources</h2></hgroup><article  id="ggplot2-resources">
 
 <ul>
-<li>home page for ggplot: <a target="_blank" rel="noopener" href='http://ggplot2.org/' title=''>http://ggplot2.org/</a></li>
-<li>Presentation: <a target="_blank" rel="noopener" href='http://ggplot2.org/resources/2007-past-present-future.pdf' title=''>http://ggplot2.org/resources/2007-past-present-future.pdf</a></li>
+<li>home page for ggplot: <a href='http://ggplot2.org/' title=''>http://ggplot2.org/</a></li>
+<li>Presentation: <a href='http://ggplot2.org/resources/2007-past-present-future.pdf' title=''>http://ggplot2.org/resources/2007-past-present-future.pdf</a></li>
 <li>Book: ggplot2: Elegant Graphics for Data Analysis (check Amazon)</li>
-<li>Vanderbilt Workshop: <a target="_blank" rel="noopener" href='http://ggplot2.org/resources/2007-vanderbilt.pdf' title=''>http://ggplot2.org/resources/2007-vanderbilt.pdf</a></li>
-<li>Documentation: <a target="_blank" rel="noopener" href='http://ggplot2.tidyverse.org/reference' title=''>http://ggplot2.tidyverse.org/reference</a></li>
-<li>R for Data Science Online Book - <a target="_blank" rel="noopener" href='http://r4ds.had.co.nz/' title=''>http://r4ds.had.co.nz/</a></li>
-<li>R Graphics Cookbook: <a target="_blank" rel="noopener" href='http://www.cookbook-r.com/Graphs/index.html' title=''>http://www.cookbook-r.com/Graphs/index.html</a></li>
+<li>Vanderbilt Workshop: <a href='http://ggplot2.org/resources/2007-vanderbilt.pdf' title=''>http://ggplot2.org/resources/2007-vanderbilt.pdf</a></li>
+<li>Documentation: <a href='http://ggplot2.tidyverse.org/reference' title=''>http://ggplot2.tidyverse.org/reference</a></li>
+<li>R for Data Science Online Book - <a href='http://r4ds.had.co.nz/' title=''>http://r4ds.had.co.nz/</a></li>
+<li>R Graphics Cookbook: <a href='http://www.cookbook-r.com/Graphs/index.html' title=''>http://www.cookbook-r.com/Graphs/index.html</a></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>ggplot2 resources</h2></hgroup><article  id="ggplot2-resources-1">
 
 <p>The cheat sheet is very useful!</p>
 
-<p><a target="_blank" rel="noopener" href='http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf' title=''>http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf</a></p>
+<p><a href='http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf' title=''>http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf</a></p>
 
 </article></slide><slide class=""><hgroup><h2>tidyverse</h2></hgroup><article  id="tidyverse">
 
@@ -391,7 +216,7 @@ for (ii in 1:length(mydf)) {
 
 <ul>
 <li>A collection of R packages that share common philosophies to work well together</li>
-<li>Home page for project is at <a target="_blank" rel="noopener" href='http://tidyverse.org/' title=''>http://tidyverse.org/</a></li>
+<li>Home page for project is at <a href='http://tidyverse.org/' title=''>http://tidyverse.org/</a></li>
 <li>Main packages are: ggplot2, tibblr, tidyr, readr, purrr, dplyr</li>
 <li>Can install from within R Studio just like any other package</li>
 <li>The name of the package is simply tidyverse</li>
@@ -443,7 +268,7 @@ for (ii in 1:length(mydf)) {
 <li>bars, histograms</li>
 <li>text labels</li>
 <li>points</li>
-<li><a target="_blank" rel="noopener" href='http://ggplot2.tidyverse.org/reference/#section-layer-geoms' title=''>http://ggplot2.tidyverse.org/reference/#section-layer-geoms</a></li>
+<li><a href='http://ggplot2.tidyverse.org/reference/#section-layer-geoms' title=''>http://ggplot2.tidyverse.org/reference/#section-layer-geoms</a></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Examples using mtcars</h2></hgroup><article  id="examples-using-mtcars">
@@ -824,9 +649,9 @@ facet_wrap(~clarity)</pre>
 </article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references">
 
 <ul>
-<li><a target="_blank" rel="noopener" href='http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html#5.%20Faceting:%20Draw%20multiple%20plots%20within%20one%20figure/' title=''>http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html#5.%20Faceting:%20Draw%20multiple%20plots%20within%20one%20figure/</a></li>
-<li><a target="_blank" rel="noopener" href='http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization/' title=''>http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization/</a></li>
-<li><a target="_blank" rel="noopener" href='https://ggplot2.tidyverse.org/reference/position_dodge.html/' title=''>https://ggplot2.tidyverse.org/reference/position_dodge.html/</a></li>
+<li><a href='http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html#5.%20Faceting:%20Draw%20multiple%20plots%20within%20one%20figure/' title=''>http://r-statistics.co/Complete-Ggplot2-Tutorial-Part2-Customizing-Theme-With-R-Code.html#5.%20Faceting:%20Draw%20multiple%20plots%20within%20one%20figure/</a></li>
+<li><a href='http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization/' title=''>http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization/</a></li>
+<li><a href='https://ggplot2.tidyverse.org/reference/position_dodge.html/' title=''>https://ggplot2.tidyverse.org/reference/position_dodge.html/</a></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Happy Plotting!</h2></hgroup><article  id="happy-plotting"></article></slide>
@@ -859,96 +684,6 @@ facet_wrap(~clarity)</pre>
     }
   })();
 </script>
-
-</body>
-</html>
-
-      </div>
-      
-      
-      
-    </div>
-  <ul class="breadcrumb">
-            <li><a href="/pages/">PAGES</a></li>
-            <li><a href="/pages/R-notes/">R-NOTES</a></li>
-            <li>LECTURE10_GGPLOT2</li>
-  </ul>
-
-    
-    
-
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-  <div class="languages">
-    <label class="lang-select-label">
-      <i class="fa fa-language"></i>
-      <span>简体中文</span>
-      <i class="fa fa-angle-up" aria-hidden="true"></i>
-    </label>
-    <select class="lang-select" data-canonical="" aria-label="选择语言">
-      
-        <option value="zh-CN" data-href="/pages/R-notes/Lecture10_ggplot2.html" selected="">
-          简体中文
-        </option>
-      
-        <option value="en" data-href="/en/pages/R-notes/Lecture10_ggplot2.html" selected="">
-          English
-        </option>
-      
-    </select>
-  </div>
-
-  <div class="copyright">
-    &copy; 
-    <span itemprop="copyrightYear">2024</span>
-    <span class="with-love">
-      <i class="fa fa-heart"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Mr.Rice</span>
-  </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up fa-lg"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-
-  
-
-
-
-
 
 </body>
 </html>
